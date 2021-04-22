@@ -1,0 +1,547 @@
+{
+  "name": "yochaiz/darts-UNIQ",
+  "url": "https://github.com/aqui-tna/darts-UNIQ",
+  "python_version": "3",
+  "requirements": {
+    "req_file": "requirements.txt",
+    "pip": [
+      ""
+    ],
+    "others": [
+      "cudnn"
+    ]
+  },
+  "to_run": {
+      "decision": false,
+      "reason": "The project uses deprecated functions and libraries"
+  },
+  "entries": [
+      {
+        "cmd": "python train_search.py",
+        "main": "train_search.py",
+        "steps": [
+            "data-preparation or training or testing or data-preprocessing or anything else"
+        ],
+        "args_lib": "argparse",
+        "args": [
+          {
+              "names": [
+                  "--data"
+              ],
+              "input": true,
+              "dest": "data",
+              "ex_has_default": false,
+              "default": null,
+              "type": "float",
+              "mandatory": true
+          },
+          {
+              "names": [
+                  "--batch_size"
+              ],
+              "input": true,
+              "dest": "batch_size",
+              "ex_has_default": true,
+              "default": 256,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--learning_rate"
+              ],
+              "input": true,
+              "dest": "learning_rate",
+              "ex_has_default": true,
+              "default": 0.01,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--learning_rate_min"
+              ],
+              "input": true,
+              "dest": "learning_rate_min",
+              "ex_has_default": true,
+              "default": 1e-05,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--momentum"
+              ],
+              "input": true,
+              "dest": "momentum",
+              "ex_has_default": true,
+              "default": 0.9,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--weight_decay"
+              ],
+              "input": true,
+              "dest": "weight_decay",
+              "ex_has_default": true,
+              "default": 4e-05,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--report_freq"
+              ],
+              "input": true,
+              "dest": "report_freq",
+              "ex_has_default": true,
+              "default": 1,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--gpu"
+              ],
+              "input": true,
+              "dest": "gpu",
+              "ex_has_default": true,
+              "default": "0",
+              "type": "str",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--nCopies"
+              ],
+              "input": true,
+              "dest": "nCopies",
+              "ex_has_default": true,
+              "default": 1,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--epochs"
+              ],
+              "input": true,
+              "dest": "epochs",
+              "ex_has_default": true,
+              "default": "5",
+              "type": "str",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--optimal_epochs"
+              ],
+              "input": true,
+              "dest": "optimal_epochs",
+              "ex_has_default": true,
+              "default": 30,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--workers"
+              ],
+              "input": true,
+              "dest": "workers",
+              "ex_has_default": true,
+              "default": 1,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--save"
+              ],
+              "input": true,
+              "dest": "save",
+              "ex_has_default": true,
+              "default": "EXP",
+              "type": "str",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--seed"
+              ],
+              "input": true,
+              "dest": "seed",
+              "ex_has_default": true,
+              "default": 2,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--grad_clip"
+              ],
+              "input": true,
+              "dest": "grad_clip",
+              "ex_has_default": true,
+              "default": 5,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--train_portion"
+              ],
+              "input": true,
+              "dest": "train_portion",
+              "ex_has_default": true,
+              "default": 0.5,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--propagate"
+              ],
+              "input": false,
+              "dest": "propagate",
+              "ex_has_default": true,
+              "default": false,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--arch_learning_rate"
+              ],
+              "input": true,
+              "dest": "arch_learning_rate",
+              "ex_has_default": true,
+              "default": 0.01,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--arch_weight_decay"
+              ],
+              "input": true,
+              "dest": "arch_weight_decay",
+              "ex_has_default": true,
+              "default": 0.001,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--pre_trained"
+              ],
+              "input": true,
+              "dest": "pre_trained",
+              "ex_has_default": false,
+              "default": null,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--init_weights_train"
+              ],
+              "input": false,
+              "dest": "init_weights_train",
+              "ex_has_default": true,
+              "default": false,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--nBitsMin"
+              ],
+              "input": true,
+              "dest": "nBitsMin",
+              "ex_has_default": true,
+              "default": 1,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--nBitsMax"
+              ],
+              "input": true,
+              "dest": "nBitsMax",
+              "ex_has_default": true,
+              "default": 3,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--bitwidth"
+              ],
+              "input": true,
+              "dest": "bitwidth",
+              "ex_has_default": false,
+              "default": null,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--kernel"
+              ],
+              "input": true,
+              "dest": "kernel",
+              "ex_has_default": true,
+              "default": "3",
+              "type": "str",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--alphas"
+              ],
+              "input": true,
+              "dest": "alphas",
+              "ex_has_default": false,
+              "default": null,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--nSamples"
+              ],
+              "input": true,
+              "dest": "nSamples",
+              "ex_has_default": true,
+              "default": 20,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--alphas_data_parts"
+              ],
+              "input": true,
+              "dest": "alphas_data_parts",
+              "ex_has_default": true,
+              "default": 4,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--alpha_limit"
+              ],
+              "input": true,
+              "dest": "alpha_limit",
+              "ex_has_default": true,
+              "default": 0.8,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--alpha_limit_counter"
+              ],
+              "input": true,
+              "dest": "alpha_limit_counter",
+              "ex_has_default": true,
+              "default": 10,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--partition"
+              ],
+              "input": true,
+              "dest": "partition",
+              "ex_has_default": false,
+              "default": null,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--loss"
+              ],
+              "input": true,
+              "dest": "loss",
+              "ex_has_default": true,
+              "default": "UniqLoss",
+              "type": "str",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--lmbda"
+              ],
+              "input": true,
+              "dest": "lmbda",
+              "ex_has_default": true,
+              "default": 1.0,
+              "type": "float",
+              "mandatory": false
+          },
+          {
+              "names": [
+                  "--baselineBits"
+              ],
+              "input": true,
+              "dest": "baselineBits",
+              "ex_has_default": true,
+              "default": "3,3",
+              "type": "str",
+              "mandatory": false
+          }
+      ],
+        "ins": [
+            {
+            "type": "",
+            "location": "",
+            "artifact": "",
+            "ex_from": "cmd",
+            "ex_in_repo": true
+            }
+        ],
+        "outs": [
+            {
+              "type": "",
+              "location": "",
+              "artifact": "",
+              "ex_from": "cmd",
+              "ex_in_repo": true
+            }
+        ]
+        },
+        {
+          "cmd": "python train_opt2.py",
+          "main": "train_opt2.py",
+          "steps": [
+              "Checkpoint evaluation"
+          ],
+          "args_lib": "argparse",
+          "args": [
+            {
+                "names": [
+                    "----json"
+                ],
+                "input": true,
+                "dest": "--json",
+                "ex_has_default": false,
+                "default": "type=str",
+                "type": "str",
+                "mandatory": false
+            },
+            {
+                "names": [
+                    "----dstFolder"
+                ],
+                "input": true,
+                "dest": "--dstFolder",
+                "ex_has_default": false,
+                "default": "type=str",
+                "type": "str",
+                "mandatory": false
+            },
+            {
+                "names": [
+                    "----data"
+                ],
+                "input": true,
+                "dest": "--data",
+                "ex_has_default": false,
+                "default": "type=str",
+                "type": "str",
+                "mandatory": false
+            },
+            {
+                "names": [
+                    "----gpu"
+                ],
+                "input": true,
+                "dest": "--gpu",
+                "ex_has_default": false,
+                "default": "type=str",
+                "type": "str",
+                "mandatory": false
+            },
+            {
+                "names": [
+                    "----pp"
+                ],
+                "input": true,
+                "dest": "--pp",
+                "ex_has_default": false,
+                "default": "type=str",
+                "type": "str",
+                "mandatory": false
+            }
+        ],
+          "ins": [
+              {
+              "type": "",
+              "location": "",
+              "artifact": "",
+              "ex_from": "cmd",
+              "ex_in_repo": true
+              }
+          ],
+          "outs": [
+              {
+                "type": "",
+                "location": "",
+                "artifact": "",
+                "ex_from": "cmd",
+                "ex_in_repo": true
+              }
+          ]
+          }
+    ],
+    "ex_metrics": {
+      "metrics_files": [
+          {
+              "file_name": "",
+              "metrics": [""]
+          }
+      ],
+      "prints": [""],
+      "plots": [""],
+      "others": [
+          {
+              "name": "method name",
+              "in_repo": "false",
+              "metrics": ""
+          }
+      ]
+    },
+  "ex_hyperparams": {
+    "from_cmd": [""],
+    "config_files": [
+      {
+        "name": "",
+        "in_repo": "false",
+        "hyperparams": []
+    }
+    ],
+    "in_code": [
+      "batch_size",
+      "learning_rate",
+      "weight_decay",
+      "epochs",
+      "alpha_limit",
+      "arch_weight_decay",
+      "alpha_limit_counter"
+    ],
+    "others": [
+        {
+            "name": "",
+            "metrics": ""
+        }
+    ]
+  }
+}
