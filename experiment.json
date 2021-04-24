@@ -13,14 +13,14 @@
   },
   "to_run": {
       "decision": false,
-      "reason": "The project uses deprecated functions and libraries"
+      "reason": "Missing some files"
   },
   "entries": [
       {
         "cmd": "python train_search.py",
         "main": "train_search.py",
         "steps": [
-            "data-preparation or training or testing or data-preprocessing or anything else"
+            "trainning"
         ],
         "args_lib": "argparse",
         "args": [
@@ -401,28 +401,36 @@
       ],
         "ins": [
             {
-            "type": "",
-            "location": "",
-            "artifact": "",
+            "type": "dir",
+            "location": "data/",
+            "artifact": "dataset",
             "ex_from": "cmd",
             "ex_in_repo": true
-            }
+            },
+            {
+                "type": "dir",
+                "location": "pretrained",
+                "artifact": "model",
+                "ex_from": "cmd",
+                "ex_in_repo": true
+                }
         ],
         "outs": [
             {
-              "type": "",
-              "location": "",
-              "artifact": "",
-              "ex_from": "cmd",
-              "ex_in_repo": true
+              "type": "dir",
+              "location": "results",
+              "artifact": "model",
+              "ex_from": "manual",
+              "ex_in_repo": false
             }
         ]
         },
         {
           "cmd": "python train_opt2.py",
+          "alternate": true,
           "main": "train_opt2.py",
           "steps": [
-              "Checkpoint evaluation"
+              "training and evaluation"
           ],
           "args_lib": "argparse",
           "args": [
@@ -503,45 +511,23 @@
           }
     ],
     "ex_metrics": {
-      "metrics_files": [
-          {
-              "file_name": "",
-              "metrics": [""]
-          }
-      ],
-      "prints": [""],
-      "plots": [""],
-      "others": [
-          {
-              "name": "method name",
-              "in_repo": "false",
-              "metrics": ""
-          }
-      ]
+      "metrics_files": ["unknown"],
+      "prints": ["unknown"],
+      "plots": ["unknown"],
+      "others": []
     },
   "ex_hyperparams": {
-    "from_cmd": [""],
-    "config_files": [
-      {
-        "name": "",
-        "in_repo": "false",
-        "hyperparams": []
-    }
-    ],
+    "from_cmd": [
+        "batch_size",
+        "learning_rate",
+        "weight_decay",
+        "epochs",
+        "alpha_limit",
+        "arch_weight_decay",
+        "alpha_limit_counter"],
+    "config_files": [],
     "in_code": [
-      "batch_size",
-      "learning_rate",
-      "weight_decay",
-      "epochs",
-      "alpha_limit",
-      "arch_weight_decay",
-      "alpha_limit_counter"
     ],
-    "others": [
-        {
-            "name": "",
-            "metrics": ""
-        }
-    ]
+    "others": []
   }
 }
